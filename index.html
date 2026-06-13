@@ -3,32 +3,24 @@
 <head>
   <title>KG to Mann Converter</title>
 </head>
-<body style="text-align:center; font-family:Arial;">
+<div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial; background:#f4f4f4;">
 
-<h1>KG to Mann Converter</h1>
+<div style="background:white; padding:25px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.1); width:300px; text-align:center;">
 
-<input type="number" id="kg" placeholder="Enter KG">
-<br><br>
+<h2>KG to Mann Converter</h2>
 
-<button onclick="convert()">Convert</button>
+<input type="number" id="kg" placeholder="Enter KG"
+style="width:100%; padding:10px; margin:10px 0;">
 
-<h2 id="result"></h2>
+<button onclick="convert()"
+style="padding:10px; width:100%; background:black; color:white; border:none; border-radius:8px;">
+Convert
+</button>
 
-<script>
-function convert(){
-  let kg = parseInt(document.getElementById("kg").value);
+<h2 id="result" style="margin-top:15px;"></h2>
 
-  if(isNaN(kg)){
-    document.getElementById("result").innerText = "Please enter KG";
-    return;
-  }
-
-  let mann = Math.floor(kg / 40);
-  let remainingKg = kg % 40;
-
-  document.getElementById("result").innerText =
-    mann + " Mann " + remainingKg + " Kg";
-}
+</div>
+</div>
 </script>
 
 </body>
