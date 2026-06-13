@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KG to Mann Converter</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+<h1>KG to Mann Converter</h1>
+
+<input type="number" id="kg" placeholder="Enter KG">
+<br><br>
+
+<button onclick="convert()">Convert</button>
+
+<h2 id="result"></h2>
+
+<script>
+function convert(){
+  let kg = parseInt(document.getElementById("kg").value);
+
+  if(isNaN(kg)){
+    document.getElementById("result").innerText = "Please enter KG";
+    return;
+  }
+
+  let mann = Math.floor(kg / 40);
+  let remainingKg = kg % 40;
+
+  document.getElementById("result").innerText =
+    mann + " Mann " + remainingKg + " Kg";
+}
+</script>
+
+</body>
+</html>
