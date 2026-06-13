@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>KG to Mann Converter</title>
 </head>
-<div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial; background:#f4f4f4;">
+
+<body style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial; background:#f4f4f4;">
 
 <div style="background:white; padding:25px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.1); width:300px; text-align:center;">
 
@@ -20,7 +22,22 @@ Convert
 <h2 id="result" style="margin-top:15px;"></h2>
 
 </div>
-</div>
+
+<script>
+function convert(){
+  let kg = parseInt(document.getElementById("kg").value);
+
+  if(isNaN(kg)){
+    document.getElementById("result").innerText = "Please enter KG";
+    return;
+  }
+
+  let mann = Math.floor(kg / 40);
+  let remainingKg = kg % 40;
+
+  document.getElementById("result").innerText =
+    mann + " Mann " + remainingKg + " Kg";
+}
 </script>
 
 </body>
